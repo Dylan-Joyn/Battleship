@@ -3,16 +3,17 @@
 #define SHIP_H
 
 #include <string>
+
 using namespace std;
 
 class Ship {
-protected:
+private:
     string name;
     int length;
-    int hitsTaken;
+    int hits;
 
 public:
-    Ship(string name, int length);
+    Ship(const string& name, int length);
     string getName() const;
     int getLength() const;
     void takeHit();
@@ -21,24 +22,25 @@ public:
 
 class AircraftCarrier : public Ship {
 public:
-    AircraftCarrier();
+    AircraftCarrier() : Ship("Aircraft Carrier", 5) {}
 };
 
 class Battleship : public Ship {
 public:
-    Battleship();
+    Battleship() : Ship("Battleship", 4) {}
 };
 
 class Destroyer : public Ship {
 public:
-    Destroyer();
+    Destroyer() : Ship("Destroyer", 3) {}
 };
 
 class Cruiser : public Ship {
 public:
-    Cruiser();
+    Cruiser() : Ship("Cruiser", 2) {}
 };
 
 #endif
+
 
 

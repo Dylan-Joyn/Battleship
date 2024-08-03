@@ -6,20 +6,19 @@
 #include <vector>
 using namespace std;
 
-class Board
-{
+class Board {
 private:
-	const int SIZE = 10; //
-	vector<vector<char>>grid;
-	vector<Ship*> ships;
-
-	int letterToIndex(char letter) const;
+    char board[10][10];
+    vector<Ship*> ships;
 
 public:
-	Board();
-	bool placeShip(Ship* ship, char xLetter, int y, bool vertical);
-	bool receiveAttack(char xLetter, int y);
-	void display() const;
+    Board();
+    void printBoard();
+    bool placeShip(Ship* ship, char startX, int startY, bool isVertical);
+    bool receiveShot(char x, int y);
+    bool allShipsSunk();
 };
+
 #endif
+
 

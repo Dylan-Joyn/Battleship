@@ -1,7 +1,9 @@
+#pragma once
 #ifndef PLAYER_H
 #define PLAYER_H
 
 #include "Board.h"
+#include <string>
 
 class Player {
 private:
@@ -9,12 +11,12 @@ private:
     Board board;
 
 public:
-    Player(string name);
+    Player(const string& name);
     string getName() const;
     Board& getBoard();
-    void attack(Player& opponent, char xLetter, int y);
 };
 
 #endif
+
 
 
